@@ -687,24 +687,30 @@ document.querySelector('.navbar-brand').addEventListener('click', function(e) {
     roarSound.play(); // Agora sempre toca o som escolhido
 
     // Adicionar efeito visual
-    document.body.style.animation = 'shake 0.1s';
+    document.body.style.animation = 'shake 0.1s infinite';
     setTimeout(() => {
       document.body.style.animation = '';
-    }, 500);
+    }, 2000);
   }
 });
 
 
   // Adicionar animação de shake
   const style = document.createElement('style');
-  style.textContent = `
-    @keyframes shake {
-      0%, 100% { transform: translateX(0); }
-      25% { transform: translateX(-5px); }
-      75% { transform: translateX(5px); }
-    }
-  `;
-  document.head.appendChild(style);
+style.textContent = `
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+`;
+
+document.head.appendChild(style);
+
 </script>
 
 </body>
