@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Shin Godzilla - O Rei dos Monstros Reinventado</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@5.3.5/font/bootstrap-icons.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="shortcut icon" type="imagex/png" href="./assets/imagem/MHWilds-Gore_Magala_Icon.webp">
+  <style>
+    :root {
+      --primary-red: #dc2626;
+      --dark-bg: #1a1a1a;
+      --gold: #fbbf24;
+    }
+    
+    body {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .login-container {
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(220, 38, 38, 0.3);
+      border: 1px solid rgba(220, 38, 38, 0.2);
+      margin-top: 70px;
+    }
+    
+    .navbar {
+      background: linear-gradient(90deg, var(--primary-red) 0%, #991b1b 100%) !important;
+      box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    
+    .hero-section {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                  url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') center/cover;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      margin-top: 30px;
+    }
+    
+    .hero-content h1 {
+      font-size: 4rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+      color: var(--gold);
+    }
+    
+    .hero-content p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+    
+    .section-title {
+      color: var(--primary-red);
+      font-weight: bold;
+      margin-bottom: 2rem;
+      text-align: center;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    
+
+    .godzilla-stats {
+      background: rgba(30, 30, 30, 0.9);
+      border-radius: 15px;
+      padding: 2rem;
+      margin: 2rem auto;
+      max-width: 800px;
+      text-align: center;
+    }
+    
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    
+    .stat-item {
+      padding: 1rem;
+      background: rgba(220, 38, 38, 0.1);
+      border-radius: 10px;
+      border: 1px solid rgba(220, 38, 38, 0.338);
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    
+ 
+    .footer {
+      background: rgba(20, 20, 20, 0.95);
+      padding: 3rem 0;
+      margin-top: auto;
+      border-top: 2px solid var(--primary-red);
+    }
+    
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .footer-title {
+      color: var(--primary-red);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-description {
+      color: #ccc;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+    
+    .footer-info {
+      margin-bottom: 2rem;
+    }
+    
+    .footer-info h3 {
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    
+    .footer-info ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-info li {
+      color: #aaa;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+    
+    .footer-divider {
+      border-color: var(--primary-red);
+      width: 50%;
+      margin: 1rem auto;
+    }
+    
+    .footer-copyright {
+      color: #888;
+      font-size: 0.8rem;
+      margin-top: 1rem;
+    }
+    
+    @keyframes glow {
+      0%, 100% { text-shadow: 0 0 5px var(--primary-red), 0 0 10px var(--primary-red); }
+      50% { text-shadow: 0 0 20px var(--primary-red), 0 0 30px var(--primary-red); }
+    }
+    
+    .glow-text {
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+  
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="./assets/imagem/MHWilds-Gore_Magala_Icon2.png" height="50px" width="50px"></i>SHIN GODZILLA</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#hero"><i class="fas fa-home me-1"></i>Início</a></li>
+        <li class="nav-item"><a class="nav-link" href="#sinopse"><i class="fas fa-book me-1"></i>Sinopse</a></li>
+        <li class="nav-item"><a class="nav-link" href="#elenco"><i class="fas fa-users me-1"></i>Elenco</a></li>
+        <li class="nav-item"><a class="nav-link" href="#monstro"><i class="fas fa-dragon me-1"></i>O Monstro</a></li>
+        <li class="nav-item"><a class="nav-link" href="#curiosidades"><i class="fas fa-lightbulb me-1"></i>Curiosidades</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Tela de Login -->
+<div class="container flex-grow-1 d-flex justify-content-center align-items-center" id="login">
+  <div class="login-container p-5">
+    <div class="text-center mb-4">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#dc2626c5" class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
+        <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z"/>
+        <path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+      </svg>
+      <h2 class="glow-text">ACESSO RESTRITO</h2>
+      <p class="text-light">Entre para conhecer a verdade sobre Godzilla</p>
+    </div>
+    <form>
+      <div class="mb-3">
+        <label for="email" class="form-label"><i class="fas fa-envelope me-2"></i>E-mail</label>
+        <input type="email" class="form-control bg-dark text-white border-danger" id="email" placeholder="Digite seu e-mail">
+      </div>
+      <div class="mb-3">
+        <label for="senha" class="form-label"><i class="fas fa-lock me-2"></i>Senha</label>
+        <input type="password" class="form-control bg-dark text-white border-danger" id="senha" placeholder="Digite sua senha">
+      </div>
+      <a href="/Bootstrap filme/assets/Site_principal.html"><button type="button" class="btn btn-primary w-100" onclick="document.getElementById('site').style.display='block'; document.getElementById('login').style.display='none';">
+        <i class="fas fa-sign-in-alt me-2"></i>ACESSAR ARQUIVO SECRETO
+      </button></a>
+    </form>
+  </div>
+</div>
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Smooth scrolling para links internos
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+
+  // Modal de imagens da galeria
+  document.querySelectorAll('.gallery-img').forEach(img => {
+    img.addEventListener('click', function() {
+      const modalImage = document.getElementById('modalImage');
+      modalImage.src = this.src;
+      modalImage.alt = this.alt;
+    });
+  });
+
+  // Efeito de loading nos botões
+  document.querySelectorAll('.btn-primary').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const originalText = this.innerHTML;
+      this.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Carregando...';
+      setTimeout(() => {
+        this.innerHTML = originalText;
+      }, 1000);
+    });
+  });
+
+  // Animação de entrada dos cards
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  // Aplicar animação aos cards
+  document.querySelectorAll('.card').forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(50px)';
+    card.style.transition = 'all 0.6s ease';
+    observer.observe(card);
+  });
+
+  // Contador animado para estatísticas
+  function animateCounter(element, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      element.innerHTML = Math.floor(progress * (end - start) + start);
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+
+  // Ativar contadores quando visíveis
+  const statsObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const statNumbers = entry.target.querySelectorAll('.stat-number');
+        statNumbers.forEach(stat => {
+          const text = stat.textContent;
+          if (text.includes('m')) {
+            animateCounter(stat, 0, 118, 2000);
+            setTimeout(() => stat.textContent = '118m', 2000);
+          } else if (text.includes('t')) {
+            animateCounter(stat, 0, 92000, 2000);
+            setTimeout(() => stat.textContent = '92.000t', 2000);
+          } else if (text.includes('2016')) {
+            animateCounter(stat, 2000, 2016, 2000);
+          } else if (text.includes('min')) {
+            animateCounter(stat, 0, 120, 2000);
+            setTimeout(() => stat.textContent = '120min', 2000);
+          }
+        });
+        statsObserver.unobserve(entry.target);
+      }
+    });
+  });
+
+  document.querySelectorAll('.godzilla-stats').forEach(stats => {
+    statsObserver.observe(stats);
+  });
+
+
+  // Easter egg - Rugido do Godzilla
+let clickCount = 0;
+
+document.querySelector('.navbar-brand').addEventListener('click', function(e) {
+  e.preventDefault();
+  clickCount++;
+
+  if (clickCount % 5 === 0) {
+    let roarSound;
+
+    if ((clickCount / 5) % 2 === 0) {
+      roarSound = new Audio('./assets/audio/godzilla-roar.mp3');
+    } else {
+      roarSound = new Audio('./assets/audio/Zoh-shia.mp3');
+    }
+
+    roarSound.play(); // Agora sempre toca o som escolhido
+
+    // Adicionar efeito visual
+    document.body.style.animation = 'shake 0.1s infinite';
+    setTimeout(() => {
+      document.body.style.animation = '';
+    }, 2000);
+  }
+});
+
+
+  // Adicionar animação de shake
+  const style = document.createElement('style');
+style.textContent = `
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+`;
+
+document.head.appendChild(style);
+
+</script>
+
+</body>
+</html>
